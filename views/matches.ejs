@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Matches on <%= selectedDate %></title>
+</head>
+<body>
+    <h1>Matches on <%= selectedDate %></h1>
+
+    <% if (matches.length > 0) { %>
+        <ul>
+        <% matches.forEach(match => { %>
+            <li>
+                <strong><%= match.homeTeam.name %></strong> vs <strong><%= match.awayTeam.name %></strong>
+                (Competition: <%= match.competition.name %>)
+            </li>
+        <% }) %>
+        </ul>
+    <% } else { %>
+        <p>No matches scheduled for this day.</p>
+    <% } %>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
